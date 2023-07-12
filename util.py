@@ -14,5 +14,5 @@ def connect_to_db():
         )
     except mysql.connector.Error as error:
         print("failed to connect",error)
-        return None
+        return error
     return mydb

@@ -32,7 +32,7 @@ def get_html_results(time):
        <html>
     <body>
       <p>
-        <span style="width: 50px;">Word</span>
+        <span style="width: 50px;">Time</span>
         <span style="width: 50px;">Ram Usage</span>
       </p>
       <p>
@@ -48,7 +48,11 @@ def get_html_results(time):
 
 @app.route('/ram/<time>')
 def get_results(time):
-    mydb = connect_to_db()
+    try:
+        mydb = connect_to_db()
+    except mysql.connector.Error as error:
+        print("failed to connect", error)
+        return error
     res = get_html_results(time)
     return res
 

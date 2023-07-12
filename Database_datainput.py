@@ -29,7 +29,13 @@ def insert_values(mydb, current_time, ram_usage):
 
 
 def main():
-    mydb = connect_to_db()
+    try:
+        mydb = connect_to_db()
+    except mysql.connector.Error as error:
+        print("failed to connect", error)
+        return error
+
+
     while True:
         # getting current time
         now = datetime.now()
