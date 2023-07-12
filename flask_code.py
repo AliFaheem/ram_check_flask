@@ -24,7 +24,7 @@ def get_html_results(time):
     except mysql.connector.Error as error:
         print("Data retrieval failed", error)
         mydb.close()
-        return error
+        return None
 
     mydb.close()
 

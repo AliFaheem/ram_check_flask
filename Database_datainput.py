@@ -33,7 +33,7 @@ def main():
         mydb = connect_to_db()
     except mysql.connector.Error as error:
         print("failed to connect", error)
-        return error
+        return None
 
 
     while True:
