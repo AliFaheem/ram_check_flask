@@ -16,7 +16,6 @@ The following input formats are acceptable:
 * SS
 * HHMMSS
 * MMSS
-* SS
 
 ## Example
 
