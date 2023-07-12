@@ -3,6 +3,8 @@ import mysql.connector
 from flask import Flask
 app = Flask(__name__)
 
+
+
 # connecting to local db
 def connect_to_db():
     try:
@@ -63,7 +65,6 @@ def get_results(time):
     mydb = connect_to_db()
     res = get_html_results(time)
     return res
-
 
 
 if __name__ == '__main__':
