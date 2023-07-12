@@ -3,28 +3,12 @@ import time
 import psutil
 from datetime import datetime
 import mysql.connector
-from dotenv import dotenv_values
 
-config = dotenv_values("credentials.env")
+from util import *
 
 
-# Connecting to local db
-def connect_to_db():
-    try:
-        mydb = mysql.connector.connect(
-            host=config["DB_HOST"],
-            user=config["DB_USER"],
-            password=config["DB_PASS"],
-            port = config["DB_PORT"],
-            database = config["DB_NAME"]
-        )
-    except mysql.connector.Error as error:
-        print("failed to connect",error)
-        return None
-    return mydb
-
-# This function inserts ran usage values to local db
-def inser_values(mydb, current_time, ram_usage):
+# This function inserts ranm usage values to local db
+def insert_values(mydb, current_time, ram_usage):
 
     # creating query to insert the rmusage values in the db
     mySql_insert_query = "INSERT INTO ram_values (TIME,RAM) VALUES (%s,%s)"
@@ -55,7 +39,7 @@ def main():
         ram_usage = psutil.virtual_memory()[2]
 
         # inserting values to db
-        inser_values(mydb, current_time, ram_usage)
+        insert_values(mydb, current_time, ram_usage)
 
         time.sleep(15)
 

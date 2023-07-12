@@ -1,27 +1,10 @@
 import mysql.connector
-from dotenv import dotenv_values
+from util import *
 
-config = dotenv_values("credentials.env")
 
 from flask import Flask
 app = Flask(__name__)
 
-
-
-# connecting to local db
-def connect_to_db():
-    try:
-        mydb = mysql.connector.connect(
-            host=config["DB_HOST"],
-            user=config["DB_USER"],
-            password=config["DB_PASS"],
-            port = config["DB_PORT"],
-            database = config["DB_NAME"]
-        )
-    except mysql.connector.Error as error:
-        print("failed to connect",error)
-        return None
-    return mydb
 
 # Getting ram usage at particular time from local db
 def get_html_results(time):
