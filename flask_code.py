@@ -28,20 +28,19 @@ def get_html_results(time):
 
     mydb.close()
 
-    res = """
-       <html>
-    <body>
-      <p>
-        <span style="width: 50px;">Time</span>
-        <span style="width: 50px;">Ram Usage</span>
-      </p>
-      <p>
-        <span style="width: 50px;">{}</span>
-        <span style="width: 50px;">{}</span>
-      </p>
-    </body>
-    </html>
-    """.format(str(data[0][1]), str(data[0][2]))
+    res = '''
+    <table border="1">
+        <tr>
+            <td>Time</td>
+            <td>{}</td>
+        </tr>
+        <tr>
+            <td>Ram Usage</td>
+            <td>{}</td>
+        </tr>
+    </table>'''.format(str(data[0][1]), str(data[0][2]))
+
+
 
     return res
 
