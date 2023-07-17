@@ -36,7 +36,7 @@ def get_html_results(time):
         </tr>
         <tr>
             <td>Ram Usage</td>
-            <td>{}</td>
+            <td>{}%</td>
         </tr>
     </table>'''.format(str(data[0][1]), str(data[0][2]))
 

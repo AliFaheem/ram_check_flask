@@ -1,0 +1,5 @@
+time
+psutil
+datetime
+mysql-connector-python
+dotenv
