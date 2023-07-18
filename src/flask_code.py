@@ -47,6 +47,7 @@ def get_html_results(time):
 
 @app.route('/ram/<time>')
 def get_results(time):
+    print("here", time)
     try:
         mydb = connect_to_db()
     except mysql.connector.Error as error:
@@ -57,4 +58,4 @@ def get_results(time):
 
 
 if __name__ == '__main__':
-   app.run()
+    app.run(host ='0.0.0.0', port = '8080')

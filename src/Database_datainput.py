@@ -4,8 +4,8 @@ import psutil
 from datetime import datetime
 import mysql.connector
 
-from util import *
 
+from util import *
 
 # This function inserts ranm usage values to local db
 def insert_values(mydb, current_time, ram_usage):

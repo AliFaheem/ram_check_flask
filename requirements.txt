@@ -1,5 +1,6 @@
-time
 psutil
 datetime
 mysql-connector-python
-dotenv
+python-dotenv
+Flask
+mysql
