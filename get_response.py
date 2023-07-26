@@ -1,4 +1,4 @@
-from util import *
+from util import connect_to_db
 import datetime
 import json
 
