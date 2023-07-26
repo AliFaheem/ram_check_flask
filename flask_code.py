@@ -1,4 +1,4 @@
-from get_response import *
+import get_response
 
 from flask import Flask
 app = Flask(__name__)
@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/ram/<time>')
 def get_results(time):
-    res = get_html_results(time)
+    res = get_response.get_html_results(time)
     return res
 
 
