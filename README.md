@@ -3,15 +3,15 @@ this code stores ram usage in the local db and returns the ram value at a specif
 
 Command to access ram value: http://localhost:5000/ram/HH:MM:SS
 
+
 ram_check_implementation
 This command will return the table entries as list of JSON objects.
-
-This command will return all the entries in the given time.
 
 
 ## Acceptable input formats
 
 The following input formats are acceptable:
+
 
 * HH   \returns all the entries in the given hour
 * HH:MM  \returns all the entries in the given hour and minute
